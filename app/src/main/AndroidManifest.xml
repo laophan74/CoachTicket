@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name="com.uit.TripTicketSaler.MainActivity3"
+            android:name="com.uit.TripTicketSaler.DetailTicket"
             android:exported="false" />
         <activity
-            android:name="com.uit.TripTicketSaler.MainActivity2"
+            android:name="com.uit.TripTicketSaler.ListTrip"
             android:exported="false" />
         <activity
-            android:name="com.uit.TripTicketSaler.MainActivity"
+            android:name="com.uit.TripTicketSaler.Seacrhtrip"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

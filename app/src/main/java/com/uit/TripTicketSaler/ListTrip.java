@@ -1,14 +1,12 @@
 package com.uit.TripTicketSaler;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class MainActivity3 extends AppCompatActivity {
+public class ListTrip extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.list_trip);
     }
 }
