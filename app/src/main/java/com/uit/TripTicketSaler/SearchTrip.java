@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class Seacrhtrip extends AppCompatActivity {
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+public class SearchTrip extends AppCompatActivity {
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

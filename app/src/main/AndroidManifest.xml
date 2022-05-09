@@ -16,7 +16,7 @@
             android:name="com.uit.TripTicketSaler.ListTrip"
             android:exported="false" />
         <activity
-            android:name="com.uit.TripTicketSaler.Seacrhtrip"
+            android:name="com.uit.TripTicketSaler.SearchTrip"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
