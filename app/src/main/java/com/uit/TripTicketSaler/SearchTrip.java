@@ -12,8 +12,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -27,9 +29,9 @@ import java.util.List;
 
 public class SearchTrip extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private DocumentReference noteRef = db.collection("Station").document("OW43G8l2wr87RferTR4D");
     private CollectionReference stationRef = db.collection("Station");
     private TextView textViewtest;
+    public static List<String> listsdocument = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,20 +39,52 @@ public class SearchTrip extends AppCompatActivity {
         setContentView(R.layout.search_trip);
         textViewtest = findViewById(R.id.textviewtest);
 
-        //getStationName();
-        getAllStationDocument();
-        
+
+        stationRef.get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<String> list = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                list.add(document.getId());
+
+                                for(int i = 0; i < list.size(); i++){
+                                    db.collection("Station").document(list.get(i)).get()
+                                            .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                @Override
+                                                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                    if(documentSnapshot.exists()){
+                                                        List<String> liststationname = new ArrayList<>();
+                                                        String name = documentSnapshot.getString("name");
+                                                        liststationname.add(name);
+                                                        //textViewtest.setText(liststationname.get(0)+liststationname.get(1));
+                                                    }else {
+                                                        Toast.makeText(SearchTrip.this, "Document doesnt exist", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+                                            });
+
+                                }
+                            }
+
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
 
     }
 
-    private void getStationName(){
-        noteRef.get()
+    private void getStationName(String document){
+        db.collection("Station").document(document).get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if(documentSnapshot.exists()){
                             String name = documentSnapshot.getString("name");
-                            textViewtest.setText(name);
+                            //liststationname.add(name);
                         }else {
                             Toast.makeText(SearchTrip.this, "Document doesnt exist", Toast.LENGTH_SHORT).show();
                         }
@@ -66,19 +100,19 @@ public class SearchTrip extends AppCompatActivity {
     }
     private void getAllStationDocument(){
         stationRef.get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<String> list = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                list.add(document.getId());
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
                     }
                 });
     }
-
 
 }
