@@ -14,21 +14,36 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchTrip extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private DocumentReference noteRef = db.collection("Station").document("DWS769q3lo89ubfmxjnp");
+    private DocumentReference noteRef = db.collection("Station").document("OW43G8l2wr87RferTR4D");
+    private CollectionReference stationRef = db.collection("Station");
     private TextView textViewtest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_trip);
         textViewtest = findViewById(R.id.textviewtest);
 
-        //Lấy data
+        //getStationName();
+        getAllStationDocument();
+        
+
+    }
+
+    private void getStationName(){
         noteRef.get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
@@ -49,4 +64,21 @@ public class SearchTrip extends AppCompatActivity {
                     }
                 });
     }
+    private void getAllStationDocument(){
+        stationRef.get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+    }
+
+
 }
