@@ -21,11 +21,11 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp">
+                android:layout_marginEnd="5dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/ic_person_outline_white_24dp" />
@@ -36,10 +36,9 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <ScrollView
@@ -67,8 +66,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/print_clearly"
+                        android:fontFamily="sans-serif-condensed-medium"
                         android:text="Hello!"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
@@ -92,8 +90,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="-44dp"
+                    android:layout_marginTop="-20dp"
                     android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
                     app:cardCornerRadius="8dp"
                     app:cardUseCompatPadding="true"
                     app:contentPadding="16dp">
@@ -109,62 +108,69 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
-                            android:textColorHint="#FF8A99AF">
+                            android:textColorHint="#FF8A99AF"
+                            android:background="@drawable/my_border">
 
                             <Spinner
-                                android:id="@+id/spinner_destination"
+                                android:id="@+id/citySpinner"
                                 android:layout_width="match_parent"
-                                android:layout_height="50dp"
-
-                                 />
+                                android:layout_height="50dp" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <EditText
+                            android:textColorHint="#FF8A99AF"
+                            android:background="@drawable/my_border">
+                            <Spinner
+                                android:id="@+id/addressSpinner"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:drawableStart="@drawable/ic_location_on_light_blue_24dp"
-                                android:drawablePadding="16dp"
-                                android:fontFamily="@font/calibri"
-                                android:hint="From"
-                                android:inputType="text"
-                                android:maxLines="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="16sp" />
+                                android:layout_height="50dp" />
                         </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:textColorHint="#FF8A99AF"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:textColorHint="#FF8A99AF">
-
                             <EditText
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableStart="@drawable/ic_date_range_light_blue_24dp"
                                 android:drawablePadding="16dp"
                                 android:fontFamily="@font/calibri"
-                                android:hint="Select Date"
+                                android:hint="Chọn điểm đến"
                                 android:inputType="date"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
-                            <TextView
-                                android:id="@+id/textviewtest"
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginTop="10dp"
-                                />
-
-
                         </com.google.android.material.textfield.TextInputLayout>
 
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:textColorHint="#FF8A99AF">
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableStart="@drawable/ic_date_range_light_blue_24dp"
+                                android:drawablePadding="16dp"
+                                android:fontFamily="@font/calibri"
+                                android:hint="Chọn ngày"
+                                android:inputType="date"
+                                android:maxLines="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
