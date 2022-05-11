@@ -55,7 +55,9 @@ public class SearchTrip extends AppCompatActivity {
                         for(QueryDocumentSnapshot doc : task.getResult()){
                             Station station = doc.toObject(Station.class);
                             lStation.add(station);
-                            lCity.add(station.getCity());
+                            if(!lCity.contains(station.getCity())){
+                                lCity.add(station.getCity());
+                            }
                         }
                         ArrayAdapter<String> aaC = new ArrayAdapter<String>(this,
                                 android.R.layout.simple_spinner_dropdown_item, lCity);
