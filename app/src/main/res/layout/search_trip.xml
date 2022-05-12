@@ -174,7 +174,7 @@
 
                                 <TextView
                                     android:id="@+id/peopleTextview"
-                                    android:layout_width="220dp"
+                                    android:layout_width="215dp"
                                     android:layout_height="match_parent"
                                     android:text="Người lớn"
                                     android:gravity="fill"
@@ -186,7 +186,7 @@
                                 <ImageButton
                                     android:onClick="btnReduce"
                                     android:layout_width="20dp"
-                                    android:layout_height="50dp"
+                                    android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_arrow_left_24"/>
 
                                 <TextView
@@ -200,7 +200,7 @@
                                 <ImageButton
                                     android:onClick="btnIncrease"
                                     android:layout_width="20dp"
-                                    android:layout_height="50dp"
+                                    android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_arrow_right_24"/>
 
 
@@ -227,7 +227,7 @@
 
                                 <TextView
                                     android:id="@+id/childTextview"
-                                    android:layout_width="220dp"
+                                    android:layout_width="215dp"
                                     android:layout_height="match_parent"
                                     android:text="Trẻ em"
                                     android:gravity="fill"
@@ -238,7 +238,7 @@
 
                                 <ImageButton
                                     android:layout_width="20dp"
-                                    android:layout_height="50dp"
+                                    android:layout_height="match_parent"
                                     android:onClick="btnChildReduce"
                                     android:src="@drawable/ic_baseline_arrow_left_24" />
 
@@ -253,7 +253,7 @@
                                 <ImageButton
                                     android:onClick="btnChildIncrease"
                                     android:layout_width="20dp"
-                                    android:layout_height="50dp"
+                                    android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_arrow_right_24"/>
 
 
@@ -275,7 +275,7 @@
                                     android:src="@drawable/ic_baseline_calendar_today_24"/>
                                 <TextView
                                     android:id="@+id/dateTextview"
-                                    android:layout_width="250dp"
+                                    android:layout_width="245dp"
                                     android:layout_height="match_parent"
                                     android:hint="Chọn ngày"
                                     android:inputType="date"

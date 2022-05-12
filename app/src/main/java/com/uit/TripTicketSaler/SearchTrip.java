@@ -33,6 +33,11 @@ import com.uit.TripTicketSaler.Model.Station;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchTrip extends AppCompatActivity {
@@ -45,7 +50,7 @@ public class SearchTrip extends AppCompatActivity {
     private TextView dateTextview;
     private ArrayList<Station> lStation = new ArrayList<>();
     private ArrayList<String> lCity = new ArrayList<>();
-    private ArrayList<String> lCity1 = new ArrayList<>();
+
     private DatePickerDialog datePickerDialog;
 
     public static int numPeople = 0;
@@ -89,44 +94,23 @@ public class SearchTrip extends AppCompatActivity {
     private void loadDataSpinner(){
         db.collection("Station").get()
                 .addOnCompleteListener(task -> {
-                    if(task.isSuccessful()){
-                        for(QueryDocumentSnapshot doc : task.getResult()){
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot doc : task.getResult()) {
                             Station station = doc.toObject(Station.class);
                             lStation.add(station);
-                            if(!lCity.contains(station.getCity())){
+                            if (!lCity.contains(station.getCity())) {
                                 lCity.add(station.getCity());
 
                             }
+                            ArrayAdapter<String> aaC = new ArrayAdapter<String>(this,
+                                    android.R.layout.simple_spinner_dropdown_item, lCity);
+                            citySpn.setAdapter(aaC);
+                            citySpn1.setAdapter(aaC);
                         }
-                        ArrayAdapter<String> aaC = new ArrayAdapter<String>(this,
-                                android.R.layout.simple_spinner_dropdown_item, lCity);
-                        citySpn.setAdapter(aaC);
-
-                        ArrayAdapter<String> aaC1 = new ArrayAdapter<String>(this,
-                                android.R.layout.simple_spinner_dropdown_item, lCity);
-                        citySpn1.setAdapter(aaC1);
-
-                       /*citySpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                           @Override
-                           public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                               lAddr.clear();
-                               for (Station s : lStation) {
-                                   if(s.getCity()==adapterView.getItemAtPosition(i)){
-                                       lAddr.add(s.getAddress());
-                                   }
-                               }
-                               ArrayAdapter<String> aaA = new ArrayAdapter<String>(SearchTrip.this, android.R.layout.simple_spinner_dropdown_item, lAddr);
-                               citySpn1.setAdapter(aaA);
-                           }
-
-                           @Override
-                           public void onNothingSelected(AdapterView<?> adapterView) {
-
-                           }
-                       });*/
                     }
                 });
     }
+
 
     public void btnReduce(View view) {
         if(numPeople!=0) {
@@ -151,5 +135,4 @@ public class SearchTrip extends AppCompatActivity {
             numChildrenTextview.setText(String.valueOf(numChildren));
         }
     }
-
 }
