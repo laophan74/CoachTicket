@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SearchTrip">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -15,8 +15,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            >
+            android:layout_height="?attr/actionBarSize">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -178,13 +177,13 @@
                                     android:layout_height="match_parent"
                                     android:text="Người lớn"
                                     android:gravity="fill"
-                                    android:layout_marginLeft="10dp"
-                                    android:textSize="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="20sp"
                                     android:textStyle="bold"
                                     />
 
                                 <ImageButton
-                                    android:onClick="btnReduce"
+                                    android:id="@+id/adultM"
                                     android:layout_width="20dp"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_arrow_left_24"/>
@@ -198,7 +197,7 @@
                                     android:textSize="35sp"
                                     android:textStyle="bold" />
                                 <ImageButton
-                                    android:onClick="btnIncrease"
+                                    android:id="@+id/adultA"
                                     android:layout_width="20dp"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_arrow_right_24"/>
@@ -229,17 +228,17 @@
                                     android:id="@+id/childTextview"
                                     android:layout_width="215dp"
                                     android:layout_height="match_parent"
-                                    android:text="Trẻ em"
+                                    android:text="@string/txtTrem"
                                     android:gravity="fill"
-                                    android:layout_marginLeft="10dp"
-                                    android:textSize="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="20sp"
                                     android:textStyle="bold"
                                     />
 
                                 <ImageButton
+                                    android:id="@+id/childM"
                                     android:layout_width="20dp"
                                     android:layout_height="match_parent"
-                                    android:onClick="btnChildReduce"
                                     android:src="@drawable/ic_baseline_arrow_left_24" />
 
                                 <TextView
@@ -251,11 +250,10 @@
                                     android:textSize="35sp"
                                     android:textStyle="bold" />
                                 <ImageButton
-                                    android:onClick="btnChildIncrease"
+                                    android:id="@+id/childA"
                                     android:layout_width="20dp"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_arrow_right_24"/>
-
 
                             </LinearLayout>
                         </com.google.android.material.textfield.TextInputLayout>
@@ -264,8 +262,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:textColorHint="#FF8A99AF"
-                            android:background="@drawable/my_border"
-                            >
+                            android:background="@drawable/my_border">
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
@@ -282,9 +279,9 @@
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
                                     android:textSize="20dp"
-                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginStart="10dp"
                                     android:gravity="fill"
-                                    />
+                                    tools:ignore="TextViewEdits" />
                                 <ImageButton
                                     android:id="@+id/datePickerActions"
                                     android:layout_width="40dp"
@@ -314,7 +311,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>
-
 
         </ScrollView>
 

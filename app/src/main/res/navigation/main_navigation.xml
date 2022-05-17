@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/searchTicket">
+
+    <fragment
+        android:id="@+id/searchTicket"
+        android:name="com.uit.TripTicketSaler.SearchTicket"
+        android:label="fragment_search_ticket"
+        tools:layout="@layout/fragment_search_ticket" >
+        <action
+            android:id="@+id/action_searchTicket_to_listCoach"
+            app:destination="@id/listCoach" />
+    </fragment>
+    <fragment
+        android:id="@+id/listCoach"
+        android:name="com.uit.TripTicketSaler.ListCoach"
+        android:label="fragment_list_coach"
+        tools:layout="@layout/fragment_list_coach" >
+        <action
+            android:id="@+id/action_listCoach_to_detailTicket"
+            app:destination="@id/detailTicket" />
+        <action
+            android:id="@+id/action_listCoach_to_searchTicket"
+            app:destination="@id/searchTicket" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailTicket"
+        android:name="com.uit.TripTicketSaler.DetailTicket"
+        android:label="fragment_detail_ticket"
+        tools:layout="@layout/fragment_detail_ticket" >
+        <action
+            android:id="@+id/action_detailTicket_to_listCoach"
+            app:destination="@id/listCoach" />
+    </fragment>
+</navigation>
