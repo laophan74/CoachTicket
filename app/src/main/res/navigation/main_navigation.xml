@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/searchTicket"
         android:name="com.uit.TripTicketSaler.SearchTicket"
-        android:label="fragment_search_ticket"
-        tools:layout="@layout/fragment_search_ticket" >
+        android:label="SearchTicket"
+        tools:layout="@layout/fragment_search_ticket">
         <action
             android:id="@+id/action_searchTicket_to_listCoach"
             app:destination="@id/listCoach" />
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/listCoach"
         android:name="com.uit.TripTicketSaler.ListCoach"
-        android:label="fragment_list_coach"
-        tools:layout="@layout/fragment_list_coach" >
+        android:label="ListCoach"
+        tools:layout="@layout/fragment_list_coach">
         <action
             android:id="@+id/action_listCoach_to_detailTicket"
             app:destination="@id/detailTicket" />
@@ -29,8 +29,8 @@
     <fragment
         android:id="@+id/detailTicket"
         android:name="com.uit.TripTicketSaler.DetailTicket"
-        android:label="fragment_detail_ticket"
-        tools:layout="@layout/fragment_detail_ticket" >
+        android:label="DetailTicket"
+        tools:layout="@layout/fragment_detail_ticket">
         <action
             android:id="@+id/action_detailTicket_to_listCoach"
             app:destination="@id/listCoach" />

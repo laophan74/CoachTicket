@@ -11,15 +11,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.uit.TripTicketSaler.Model.City;
+
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 
 public class SearchTicket extends Fragment {
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private Spinner citySpn;
     private Spinner citySpn1;
@@ -28,6 +34,8 @@ public class SearchTicket extends Fragment {
     private TextView numChildrenTextview;
     private TextView dateTextview;
 
+    private ArrayList<City> lCity = new ArrayList<>();
+    private ArrayList<String> lDist = new ArrayList<>();
     public static int numPeople = 0;
     public static int numChildren = 0;
     private int y;
@@ -47,10 +55,12 @@ public class SearchTicket extends Fragment {
         numChildrenTextview = v.findViewById(R.id.numChildrenTextview);
         dateTextview = v.findViewById(R.id.dateTextview);
         datePicker = v.findViewById(R.id.datePickerActions);
-        Button adultA = v.findViewById(R.id.adultA);
-        Button adultM = v.findViewById(R.id.adultM);
-        Button childA = v.findViewById(R.id.childA);
-        Button childM = v.findViewById(R.id.childM);
+        ImageButton adultA = v.findViewById(R.id.adultA);
+        ImageButton adultM = v.findViewById(R.id.adultM);
+        ImageButton childA = v.findViewById(R.id.childA);
+        ImageButton childM = v.findViewById(R.id.childM);
+
+        LoadCities();
 
         adultA.setOnClickListener(view -> {
             numPeople++;
@@ -90,10 +100,24 @@ public class SearchTicket extends Fragment {
         return v;
     }
 
-    private void LoadSpinner(ArrayList<String> list){
-        ArrayAdapter<String> aaC = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_spinner_dropdown_item, list);
-        citySpn.setAdapter(aaC);
-        citySpn1.setAdapter(aaC);
+    private void LoadCities(){
+        db.collection("Cities").get()
+                .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot doc : task.getResult()) {
+                                    City city = doc.toObject(City.class);
+                                    lCity.add(city);
+                                }
+                                Collections.sort(lCity);
+                                for(City item : lCity){
+                                    lDist.add(item.getCname());
+                                }
+                                ArrayAdapter<String> aaC = new ArrayAdapter<String>(getActivity(),
+                                        android.R.layout.simple_spinner_dropdown_item, lDist);
+                                citySpn.setAdapter(aaC);
+                                citySpn1.setAdapter(aaC);
+                            }
+                        }
+                );
     }
 }
