@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailTicket">
+    android:layout_height="match_parent">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -29,13 +28,6 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:src="@drawable/ic_arrow_back_white_24dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_filter" />
 
             </RelativeLayout>
 
@@ -74,9 +66,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/print_clearly"
-                        android:text="Select your coach!"
+                        android:fontFamily="sans-serif"
+                        android:text="Chọn chỗ ngồi của bạn:"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -94,11 +85,11 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
-                            android:fontFamily="@font/gotham"
+                            android:fontFamily="@font/rubik_medium"
                             android:text="Hà Nội"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp" />
+                            android:textSize="22sp" />
 
                         <ImageView
                             android:layout_width="0dp"
@@ -111,11 +102,11 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
-                            android:fontFamily="@font/gotham"
+                            android:fontFamily="@font/rubik_medium"
                             android:text="Tp Hồ Chí Minh"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp" />
+                            android:textSize="22sp" />
 
                     </LinearLayout>
 
@@ -126,96 +117,20 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linearLayout"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="@font/print_clearly"
+                        android:fontFamily="sans-serif"
                         android:text="12th - Feb - 2019 | Tuesday"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView"
-                        android:layout_width="match_parent"
+
+                    <include
+                        android:id="@+id/carDetail"
+                        layout="@layout/item_ticket"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView3"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginRight="8dp"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardCornerRadius="4dp"
-                        app:cardUseCompatPadding="true"
-                        app:contentPadding="16dp"
-                        android:focusable="true">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="100">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="60"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="9:00AM - 12:30PM"
-                                    android:textColor="#000000"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="4dp"
-                                    android:layout_marginBottom="4dp"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="Expo coach service"
-                                    android:textColor="#4b4b4b"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="A/C Sleeper (2+2)"
-                                    android:textColor="#8a8a8a" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="40"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="$600.00"
-                                    android:textAlignment="textEnd"
-                                    android:textColor="#f5a622"
-                                    android:textSize="24sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="4dp"
-                                    android:layout_marginBottom="4dp"
-                                    android:fontFamily="@font/calibri"
-                                    android:text="3.30 Hour"
-                                    android:textAlignment="textEnd"
-                                    android:textColor="#b3b3b3" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
+                        android:layout_marginTop="120dp"
+                        android:layout_marginHorizontal="8dp"/>
 
                 </RelativeLayout>
 
