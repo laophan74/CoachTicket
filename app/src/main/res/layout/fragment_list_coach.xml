@@ -22,15 +22,16 @@
                 android:layout_marginEnd="16dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/backPress"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:src="@drawable/ic_arrow_back_white_24dp" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/ic_filter" />
@@ -73,7 +74,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="sans-serif-thin"
+                        android:fontFamily="sans-serif-medium"
                         android:text="Chọn vé xe bạn muốn"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
@@ -93,7 +94,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
-                            android:fontFamily="@font/gotham"
+                            android:fontFamily="sans-serif"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
@@ -110,7 +111,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
-                            android:fontFamily="@font/gotham"
+                            android:fontFamily="sans-serif"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
