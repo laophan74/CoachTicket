@@ -1,19 +1,24 @@
 package com.uit.TripTicketSaler.Model;
 
+import com.google.firebase.Timestamp;
+
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
-public class TravelCar {
+public class Coach {
     private String detail;
     private int duration;
     private String plate;
-    private String price;
+    private int price;
     private Boolean routeBN;
     private ArrayList<Boolean> seat;
     private ArrayList<Boolean> seat2nd;
-    private Calendar start;
+    private Timestamp start;
+    private int available;
+    private int speed;
 
-    public TravelCar() {}
+    public Coach() {}
 
     public String getDetail() {
         return detail;
@@ -21,6 +26,14 @@ public class TravelCar {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public int getDuration() {
@@ -39,11 +52,11 @@ public class TravelCar {
         this.plate = plate;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -71,11 +84,22 @@ public class TravelCar {
         this.seat2nd = seat2nd;
     }
 
-    public Calendar getStart() {
-        return start;
+    public int getAvailable() {
+        return available;
     }
 
-    public void setStart(Calendar start) {
+    public void setAvailable(int available) {
+        this.available = available;
+    }
+
+    public Calendar getStart() {
+        Date d = start.toDate();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(d);
+        return calendar;
+    }
+
+    public void setStart(Timestamp start) {
         this.start = start;
     }
 }

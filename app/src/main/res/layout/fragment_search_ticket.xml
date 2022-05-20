@@ -298,13 +298,14 @@
 
 
                 <Button
-                    android:id="@+id/search_buses"
+                    android:id="@+id/searchCoach"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
                     android:background="@drawable/buttonshape"
                     android:fontFamily="@font/calibri"
+                    android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
                     android:text="Tìm kiếm"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"
