@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,8 +22,9 @@
                 android:layout_marginEnd="16dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/backPress2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:src="@drawable/ic_arrow_back_white_24dp" />
@@ -82,11 +82,11 @@
                         android:weightSum="100">
 
                         <TextView
+                            android:id="@+id/txtStart"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/rubik_medium"
-                            android:text="Hà Nội"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="22sp" />
@@ -99,11 +99,11 @@
                             android:src="@drawable/ic_swap_horiz_white_24dp" />
 
                         <TextView
+                            android:id="@+id/txtEnd"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
                             android:fontFamily="@font/rubik_medium"
-                            android:text="Tp Hồ Chí Minh"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
                             android:textSize="22sp" />
@@ -112,13 +112,12 @@
 
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/txtKhoiHanh"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linearLayout"
                         android:layout_marginTop="8dp"
                         android:fontFamily="sans-serif"
-                        android:text="12th - Feb - 2019 | Tuesday"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -129,27 +128,21 @@
                         layout="@layout/item_ticket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="120dp"
-                        android:layout_marginHorizontal="8dp"/>
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="120dp" />
 
                 </RelativeLayout>
 
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="-36dp"
                     android:layout_marginRight="8dp"
-                    app:cardCornerRadius="4dp"
+                    app:cardCornerRadius="12dp"
                     app:cardUseCompatPadding="true"
                     app:contentPadding="8dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -224,626 +217,16 @@
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
 
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="4dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="1"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold"
-                                    android:visibility="invisible" />
-
-                                <TextView
-                                    android:layout_width="36dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="4dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="A"
-                                    android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="36dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="4dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="B"
-                                    android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="36dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="4dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="C"
-                                    android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="36dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="4dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="D"
-                                    android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="1"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center"
-                                tools:ignore="NestedWeights">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="2"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="3"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="4"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="5"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/your_seat_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="6"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="7"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="8"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/available_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_weight="100"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginEnd="16dp"
-                                    android:fontFamily="@font/print_clearly"
-                                    android:text="9"
-                                    android:textColor="#c3c3c3"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="50"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked_img" />
-
-                                <ImageView
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
                     </LinearLayout>
 
+                    <ScrollView
+                        android:id="@+id/groupSeats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:orientation="vertical"/>
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
 
             </LinearLayout>

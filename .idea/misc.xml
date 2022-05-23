@@ -9,9 +9,12 @@
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/activity_main2.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/activity_main3.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/activity_test.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/detail_ticket.xml" value="0.23229166666666667" />
-        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_detail_ticket.xml" value="0.23229166666666667" />
-        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_list_coach.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_detail_ticket.xml" value="0.3349397590361446" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_item.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_item_list.xml" value="0.23229166666666667" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_list_coach.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_search_ticket.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/item_ticket.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/list_trip.xml" value="0.264" />

@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +22,13 @@ import android.widget.TextView;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.uit.TripTicketSaler.Interface.MyCallBack;
+import com.uit.TripTicketSaler.Interface.ICallBack;
 import com.uit.TripTicketSaler.Model.City;
 import com.uit.TripTicketSaler.Model.Coach;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class SearchTicket extends Fragment {
 
@@ -50,8 +46,8 @@ public class SearchTicket extends Fragment {
     private ArrayList<City> lCity = new ArrayList<>();
     private ArrayList<String> lDist = new ArrayList<>();
 
-    public static int numPeople = 0;
-    public static int numChildren = 0;
+    public int numPeople = 0;
+    public int numChildren = 0;
     private int y;
     private int m;
     private int d;
@@ -146,7 +142,7 @@ public class SearchTicket extends Fragment {
                                 for (City item : lCity) {
                                     lDist.add(item.getCname());
                                 }
-                                ArrayAdapter<String> aaC = new ArrayAdapter<String>(getActivity(),
+                                ArrayAdapter<String> aaC = new ArrayAdapter<>(getActivity(),
                                         android.R.layout.simple_spinner_dropdown_item, lDist);
                                 citySpn.setAdapter(aaC);
                                 citySpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -186,6 +182,7 @@ public class SearchTicket extends Fragment {
     private void SearchCoachClick() {
         SearchFSData(coachList -> {
             Bundle bundle = new Bundle();
+            String afterD = "Sau ngày: " + d + "/" + (m + 1) + "/"+ y;
             bundle.putSerializable("Coaches", coachList);
             bundle.putInt("startInt", cStart.getDistance());
             bundle.putInt("endInt", cEnd.getDistance());
@@ -193,11 +190,12 @@ public class SearchTicket extends Fragment {
             bundle.putString("endS", cEnd.getCname());
             bundle.putInt("numCus", numPeople);
             bundle.putInt("numChild", numChildren);
+            bundle.putString("afterD" ,afterD);
             navController.navigate(R.id.action_searchTicket_to_listCoach, bundle);
         });
     }
 
-    private void SearchFSData(MyCallBack myCallBack){
+    private void SearchFSData(ICallBack myCallBack){
         ArrayList<Coach> lCoach = new ArrayList<>();
         Calendar c = Calendar.getInstance();
         c.set(y, m, d, 0, 0);

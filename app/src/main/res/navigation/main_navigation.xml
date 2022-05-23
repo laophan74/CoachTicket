@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_search_ticket">
         <action
             android:id="@+id/action_searchTicket_to_listCoach"
-            app:destination="@id/listCoach" />
+            app:destination="@id/listCoach"
+            app:popUpToSaveState="true"/>
     </fragment>
     <fragment
         android:id="@+id/listCoach"
@@ -21,7 +22,8 @@
         tools:layout="@layout/fragment_list_coach">
         <action
             android:id="@+id/action_listCoach_to_detailTicket"
-            app:destination="@id/detailTicket" />
+            app:destination="@id/detailTicket"
+            app:popUpToSaveState="true"/>
         <action
             android:id="@+id/action_listCoach_to_searchTicket"
             app:destination="@id/searchTicket" />

@@ -9,10 +9,9 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
+        android:focusableInTouchMode="false"
         android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="16dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="8dp">
 
@@ -96,8 +95,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
                     android:textColor="#E84118"
-                    android:textSize="16sp"
-                    tools:text="còn: x chỗ" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
 
