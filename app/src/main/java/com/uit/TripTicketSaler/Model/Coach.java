@@ -2,11 +2,12 @@ package com.uit.TripTicketSaler.Model;
 
 import com.google.firebase.Timestamp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Coach {
+public class Coach implements Serializable {
     private String detail;
     private int duration;
     private String plate;

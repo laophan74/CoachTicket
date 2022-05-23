@@ -4,6 +4,6 @@ import com.uit.TripTicketSaler.Model.Coach;
 
 import java.util.ArrayList;
 
-public interface MyCallBack {
+public interface ICallBack {
     void onCallback(ArrayList<Coach> coachList);
 }

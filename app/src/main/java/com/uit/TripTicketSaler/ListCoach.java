@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -12,19 +11,21 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uit.TripTicketSaler.Adapter.TicketAdapter;
+import com.uit.TripTicketSaler.Interface.ICoachListener;
 import com.uit.TripTicketSaler.Model.Coach;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class ListCoach extends Fragment {
+public class ListCoach extends Fragment  implements ICoachListener {
 
     private RecyclerView rcvCar;
     private TicketAdapter ticketAdapter;
@@ -32,12 +33,17 @@ public class ListCoach extends Fragment {
     private TextView tvEndpoint;
     private TextView tvAfterD;
     private ImageView btnBackP;
+    private ImageView btnFilter;
 
     private NavController navController;
-    private int start;
-    private int end;
-    private int numCus;
-    private int numChild;
+    private static String desStart;
+    private static String desEnd;
+    private static String afterD;
+    private static int start;
+    private static int end;
+    private static int numCus;
+    private static int numChild;
+    private static ArrayList<Coach> lCoach = new ArrayList<>();
 
     public ListCoach() {}
 
@@ -47,33 +53,42 @@ public class ListCoach extends Fragment {
 
         NavHostFragment hostFragment = (NavHostFragment) getActivity()
                 .getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
+        assert hostFragment != null;
         navController = hostFragment.getNavController();
-
-        ArrayList<Coach> lCoach = (ArrayList<Coach>) getArguments().getSerializable("Coaches");
 
         tvAfterD = v.findViewById(R.id.afterDay);
         tvEndpoint = v.findViewById(R.id.endPoint);
         tvStartPoint = v.findViewById(R.id.startPoint);
         rcvCar = v.findViewById(R.id.rcvCar);
         btnBackP = v.findViewById(R.id.backPress);
+        btnFilter = v.findViewById(R.id.filter);
 
-        tvStartPoint.setText(getArguments().getString("startS"));
-        tvEndpoint.setText(getArguments().getString("endS"));
-        start = getArguments().getInt("startInt");
-        end = getArguments().getInt("endInt");
-        numCus = getArguments().getInt("numCus");
-        numChild = getArguments().getInt("numChild");
+        if(getArguments() != null){
+            desStart = getArguments().getString("startS");
+            desEnd = getArguments().getString("endS");
+            start = getArguments().getInt("startInt");
+            end = getArguments().getInt("endInt");
+            numCus = getArguments().getInt("numCus");
+            numChild = getArguments().getInt("numChild");
+            afterD = getArguments().getString("afterD");
+            lCoach = (ArrayList<Coach>) getArguments().getSerializable("Coaches");
+        }
 
+        tvStartPoint.setText(desStart);
+        tvEndpoint.setText(desEnd);
+        tvAfterD.setText(afterD);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rcvCar.setLayoutManager(llm);
         RecyclerView.ItemDecoration decor = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         rcvCar.addItemDecoration(decor);
-
-        ticketAdapter = new TicketAdapter(lCoach, start, end, numCus, numChild);
+        ticketAdapter = new TicketAdapter(lCoach, start, end, numCus, numChild, this);
         rcvCar.setAdapter(ticketAdapter);
 
         btnBackP.setOnClickListener(view -> {
             BackPressClick();
+        });
+        btnFilter.setOnClickListener(view -> {
+
         });
 
         return v;
@@ -94,5 +109,19 @@ public class ListCoach extends Fragment {
 
     private void BackPressClick(){
         navController.navigate(R.id.action_listCoach_to_searchTicket);
+    }
+
+    @Override
+    public void onClickTicket(int pos) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("coach", lCoach.get(pos));
+        bundle.putString("pickUp", desStart);
+        bundle.putString("dest", desEnd);
+        bundle.putInt("start", start);
+        bundle.putInt("end", end);
+        bundle.putInt("adult", numCus);
+        bundle.putInt("child", numChild);
+
+        navController.navigate(R.id.action_listCoach_to_detailTicket, bundle);
     }
 }
