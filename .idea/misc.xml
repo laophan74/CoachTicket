@@ -23,10 +23,17 @@
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/drawable-v24/ic_baseline_info_24.xml" value="0.1355" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/drawable-v24/ic_location_on_light_blue_24dp.xml" value="0.2265" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/activity_log_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/activity_passenger_infomation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/activity_service.xml" value="0.2" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/detail_ticket.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/fragment_adult_infomation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/fragment_detail_ticket.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/fragment_list_coach.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/fragment_passenger_infomation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/fragment_search_ticket.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/item_adult_infomation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/item_children_information.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/item_ticket.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/list_trip.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/Desktop/CoachTicket/app/src/main/res/layout/search_trip.xml" value="0.25" />
