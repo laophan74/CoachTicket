@@ -87,8 +87,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="@font/calibri"
-                        android:text="Đừng quên mua hành lý, suất ăn và hơn thế nữa..."
+                        android:fontFamily="@font/rubik_medium"
+                        android:text="Đừng quên mua hành lý, suất ăn!"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -118,8 +118,7 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            >
+                            android:layout_marginLeft="20dp">
 
                             <TextView
                                 android:id="@+id/textVieww"
@@ -135,7 +134,7 @@
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/textVieww"
-                                android:fontFamily="@font/calibri"
+                                android:fontFamily="sans-serif"
                                 android:text="Tối đa 20kg (50k)"
                                 android:textColor="@color/Black"
                                 android:textSize="18sp" />
@@ -151,6 +150,7 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
@@ -174,11 +174,10 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            >
+                            android:layout_marginLeft="20dp">
 
                             <TextView
-                                android:id="@+id/textViewww"
+                                android:id="@+id/textViewe"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-condensed-medium"
@@ -191,7 +190,7 @@
                                 android:layout_width="200dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:layout_toRightOf="@+id/textViewww"
+                                android:layout_toRightOf="@+id/textViewe"
                                 android:fontFamily="@font/calibri"
                                 android:text="(Thay đổi hàng ngày)"
                                 android:textColor="@color/Black"
@@ -201,8 +200,8 @@
                                 android:id="@+id/textVieww2"
                                 android:layout_width="250dp"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/textViewww"
-                                android:fontFamily="@font/calibri"
+                                android:layout_below="@+id/textViewe"
+                                android:fontFamily="sans-serif"
                                 android:text="Sáng (15k)"
                                 android:textColor="@color/Black"
                                 android:textSize="18sp" />
@@ -213,7 +212,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/textVieww2"
                                 android:layout_marginTop="8dp"
-                                android:fontFamily="@font/calibri"
+                                android:fontFamily="sans-serif"
                                 android:text="Trưa (25k)"
                                 android:textColor="@color/Black"
                                 android:textSize="18sp" />
@@ -224,7 +223,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/textVieww3"
                                 android:layout_marginTop="8dp"
-                                android:fontFamily="@font/calibri"
+                                android:fontFamily="sans-serif"
                                 android:text="Tối (30k)"
                                 android:textColor="@color/Black"
                                 android:textSize="18sp" />
@@ -233,7 +232,7 @@
                                 android:id="@+id/checkbox1"
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
-                                android:layout_below="@id/textViewww"
+                                android:layout_below="@id/textViewe"
                                 android:layout_alignEnd="@id/textVieww3"
                                 android:layout_marginTop="2dp" />
 
@@ -244,6 +243,7 @@
                                 android:layout_below="@+id/checkbox1"
                                 android:layout_alignEnd="@id/textVieww3"
                                 android:layout_marginTop="2dp" />
+
                             <CheckBox
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
@@ -255,6 +255,90 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/insurance" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="20dp">
+
+                            <TextView
+                                android:id="@+id/textVie"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Bảo hiểm du lịch"
+                                android:textColor="@color/Black"
+                                android:textSize="24dp" />
+
+
+                            <TextView
+                                android:id="@+id/textVie1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textVie"
+                                android:fontFamily="sans-serif"
+                                android:text="Bảo hiểm tai nạn cá nhân"
+                                android:textColor="@color/Black"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textVie2"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/textVie1"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="sans-serif"
+                                android:text="Bảo hiểm cho những trở ngại phát sinh"
+                                android:textColor="@color/Black"
+                                android:textSize="18sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkbox"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignEnd="@id/textVie"
+                                android:layout_marginTop="5dp" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/nextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/buttonshape"
+                    android:fontFamily="@font/calibri"
+                    android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                    android:text="Đi tiếp"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
