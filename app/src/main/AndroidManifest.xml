@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
             android:name=".TotalMoney"
+            android:exported="false" />
+        <activity
+            android:name=".Service"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -21,7 +27,7 @@
             android:name=".PassengerInfomation"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".TicketInfor"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Service"
+            android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".LogIn"

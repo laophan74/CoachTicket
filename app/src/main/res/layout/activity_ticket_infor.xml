@@ -75,18 +75,259 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="Tổng tiền"
+                        android:text="Thông tin đặt chỗ"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="32sp" />
 
                 </RelativeLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="-200dp"
+                    android:focusableInTouchMode="false"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:src="@drawable/qrcode"
+                            android:layout_margin="30dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/img1"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="LHM-335"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-200dp"
+                    android:focusableInTouchMode="false"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="16dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/Bisque">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="8dp"
+                                    android:gravity="fill"
+                                    android:hint="Thông tin đặt chỗ"
+                                    android:inputType="date"
+                                    android:maxLines="1"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    tools:ignore="TextViewEdits" />
+                            </LinearLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Trạng thái"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    android:text="Đã xác nhận"/>
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Ngày đặt"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/bookingDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Tên"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="SĐT"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Email"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/email"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:focusableInTouchMode="false"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardCornerRadius="16dp"
@@ -114,7 +355,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="8dp"
                                     android:gravity="fill"
-                                    android:hint="Thông tin giá vé"
+                                    android:hint="Thông tin chuyến đi"
                                     android:inputType="date"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
@@ -130,457 +371,179 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/Lavender">
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Chuyến đi"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/totalTicketPrice"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                >
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Giá vé"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/ticketPrice"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                >
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Thuế, phí"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/tax"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/Lavender">
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Dịch vụ"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/service"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                >
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Hành lý"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/packed"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                >
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Bảo hiểm"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/insurance"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                >
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Bữa ăn"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/food"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:textColorHint="#FF8A99AF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/Lavender">
-
-                                <TextView
-                                    android:layout_width="100dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="Giảm giá"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp" />
-
-                                <TextView
-                                    android:id="@+id/codePrice"
-                                    android:layout_width="180dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    tools:ignore="TextViewEdits" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
-                                    android:text="VND"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="20dp"
-                                    tools:ignore="TextViewEdits" />
-
-                            </LinearLayout>
-
-                        </com.google.android.material.textfield.TextInputLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginBottom="5dp"
-                            >
-
-                            <TextView
-                                android:layout_width="100dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="10dp"
-                                android:gravity="fill"
-                                android:text="Nhập mã:"
-                                android:textColor="@android:color/black"
-                                android:textSize="20dp" />
-
-                            <EditText
-                                android:id="@+id/code"
-                                android:layout_width="180dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="10dp"
-                                android:gravity="fill"
-                                android:maxLines="1"
-                                android:textColor="@android:color/black"
-                                android:textSize="20dp" />
-
-                            <Button
-                                android:id="@+id/codeButton"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="center"
-                                android:layout_margin="8dp"
-                                android:background="@drawable/buttonshape"
-                                android:fontFamily="@font/calibri"
-                                android:gravity="center"
-                                android:text="OK"
-                                android:textAllCaps="false"
-                                android:textColor="#ffffff"
-                                android:textSize="10dp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@color/Bisque">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
                                 <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Số xe"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_marginStart="8dp"
+                                    android:layout_marginStart="10dp"
                                     android:gravity="fill"
-                                    android:hint="Tổng: "
-                                    android:inputType="date"
-                                    android:maxLines="1"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Ngày đi"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/Date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
                                     android:textColor="@android:color/black"
                                     android:textSize="20dp"
                                     android:textStyle="bold" />
-                            </LinearLayout>
-                        </com.google.android.material.textfield.TextInputLayout>
 
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Khời hành"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/start"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Kết thúc"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/end"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:textColorHint="#FF8A99AF">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="130dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:text="Số ghế"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/seat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="fill"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
-
             </LinearLayout>
 
         </ScrollView>
 
     </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -593,7 +556,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/buttonshape"
             android:fontFamily="@font/calibri"
-            android:text="Đi tiếp"
+            android:text="Trang chủ"
             android:textAllCaps="false"
             android:textColor="#ffffff"
             android:textSize="20sp"

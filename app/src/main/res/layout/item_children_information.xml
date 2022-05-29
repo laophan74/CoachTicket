@@ -124,78 +124,56 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/my_border"
-                android:textColorHint="#FF8A99AF">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_people_24" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_baseline_people_24" />
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="245dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="fill"
+                    android:hint="Họ và tên"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
 
-                    <TextView
-                        android:id="@+id/nameTextview"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:gravity="fill"
-                        android:hint="Họ và tên"
-                        android:inputType="date"
-                        android:maxLines="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="20dp"
-                        tools:ignore="TextViewEdits" />
+            </LinearLayout>
 
-                </LinearLayout>
-
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/my_border"
-                android:textColorHint="#FF8A99AF">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_calendar_today_24" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_baseline_calendar_today_24" />
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="245dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="fill"
+                    android:hint="Ngày sinh"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
 
-                    <TextView
-                        android:id="@+id/dateTextview"
-                        android:layout_width="245dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:gravity="fill"
-                        android:hint="Ngày sinh"
-                        android:inputType="date"
-                        android:maxLines="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="20dp"
-                        tools:ignore="TextViewEdits" />
-
-                    <ImageButton
-                        android:id="@+id/datePickerActions"
-                        android:layout_width="40dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_baseline_calendar_today_24" />
-                </LinearLayout>
-
-
-            </com.google.android.material.textfield.TextInputLayout>
+                <ImageButton
+                    android:id="@+id/datePickerActions"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_calendar_today_24" />
+            </LinearLayout>
 
 
         </LinearLayout>
