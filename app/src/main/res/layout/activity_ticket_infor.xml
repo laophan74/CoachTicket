@@ -166,7 +166,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Trạng thái"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -200,7 +200,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Ngày đặt"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -234,7 +234,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Tên"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -268,7 +268,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="SĐT"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -302,7 +302,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Email"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -382,7 +382,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Số xe"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -416,7 +416,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Ngày đi"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -450,7 +450,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Khời hành"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -484,7 +484,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Kết thúc"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView
@@ -518,7 +518,7 @@
                                     android:layout_marginStart="10dp"
                                     android:gravity="fill"
                                     android:text="Số ghế"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/DimGray"
                                     android:textSize="20dp" />
 
                                 <TextView

@@ -21,13 +21,13 @@
             android:name=".Service"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".TicketInfor"
             android:exported="false" />
         <activity
             android:name=".PassengerInfomation"
             android:exported="false" />
         <activity
-            android:name=".TicketInfor"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

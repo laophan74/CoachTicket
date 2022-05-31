@@ -42,8 +42,6 @@
                         android:layout_marginStart="10dp"
                         android:gravity="fill"
                         android:hint="Trẻ em"
-                        android:inputType="date"
-                        android:maxLines="1"
                         android:textColor="@android:color/black"
                         android:textSize="20dp"
                         android:textStyle="bold"
@@ -172,7 +170,8 @@
                     android:id="@+id/datePickerActions"
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_calendar_today_24" />
+                    android:src="@drawable/ic_baseline_calendar_today_24"
+                    android:background="@color/white"/>
             </LinearLayout>
 
 

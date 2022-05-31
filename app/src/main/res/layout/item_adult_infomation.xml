@@ -136,7 +136,7 @@
 
                 <EditText
                     android:id="@+id/name"
-                    android:layout_width="245dp"
+                    android:layout_width="290dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:gravity="fill"
@@ -159,7 +159,7 @@
 
                 <EditText
                     android:id="@+id/date"
-                    android:layout_width="245dp"
+                    android:layout_width="290dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:gravity="fill"
@@ -171,7 +171,8 @@
                     android:id="@+id/datePickerActions"
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_calendar_today_24" />
+                    android:src="@drawable/ic_baseline_calendar_today_24"
+                    android:background="@color/white"/>
             </LinearLayout>
 
             <LinearLayout
@@ -187,7 +188,7 @@
 
                 <EditText
                     android:id="@+id/id"
-                    android:layout_width="245dp"
+                    android:layout_width="290dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:gravity="fill"
@@ -210,7 +211,7 @@
 
                 <EditText
                     android:id="@+id/phone"
-                    android:layout_width="245dp"
+                    android:layout_width="290dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:gravity="fill"
