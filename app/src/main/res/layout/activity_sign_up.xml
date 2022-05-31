@@ -8,19 +8,6 @@
     tools:context=".SignUp">
 
     <TextView
-        android:id="@+id/forgotpass2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Sign In"
-        android:textColor="@color/white" />
-
-    <TextView
         android:id="@+id/signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,11 +81,11 @@
         android:layout_below="@+id/retypepassword"
         android:layout_alignEnd="@+id/retypepassword"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="162dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="91dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginEnd="150dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="LOGIN" />
+        android:text="SIGN UP" />
 
     <TextView
         android:layout_width="wrap_content"

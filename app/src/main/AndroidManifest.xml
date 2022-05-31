@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".SplashScreen2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Payment"
             android:exported="false" />
         <activity
@@ -27,7 +33,7 @@
             android:name=".PassengerInfomation"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

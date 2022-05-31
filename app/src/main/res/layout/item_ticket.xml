@@ -13,7 +13,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="16dp"
         app:cardUseCompatPadding="true"
-        app:contentPadding="12dp">
+        app:contentPadding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:textColor="#000000"
-                    android:textSize="20dp" />
+                    android:textSize="18dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -45,18 +45,18 @@
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:text="Xe: "
-                        android:textSize="20dp"
-                        android:textColor="#4b4b4b"/>
+                        android:textColor="#4b4b4b"
+                        android:textSize="18dp" />
 
                     <TextView
                         android:id="@+id/plate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
                         android:fontFamily="@font/calibri"
                         android:text="38A-3892"
                         android:textColor="#4b4b4b"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="5dp"/>
+                        android:textSize="18dp" />
 
                 </LinearLayout>
 
@@ -67,7 +67,7 @@
                     android:fontFamily="sans-serif"
                     android:text="2 tầng, giường nằm, có điều hòa"
                     android:textColor="#8a8a8a"
-                    android:textSize="18dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
