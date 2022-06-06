@@ -14,14 +14,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "416633369257-njmnojlvp82j2ptqpkrdh0t5tu6f7u9m.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.uit.TripTicketSaler",
-            "certificate_hash": "ad23fb32cd57c0577df64247b44af669fbf55bbb"
-          }
-        },
-        {
           "client_id": "416633369257-733pmihkbtu17n9o70si66a85gk8lqji.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -35,7 +27,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "416633369257-5ljauftddc13rfoa4mhufb5mod4sffqd.apps.googleusercontent.com",
+              "client_id": "416633369257-733pmihkbtu17n9o70si66a85gk8lqji.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
