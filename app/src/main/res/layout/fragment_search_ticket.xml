@@ -78,8 +78,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView"
                         android:layout_marginTop="8dp"
-                        android:fontFamily="@font/gotham"
-                        android:text="Where you want to go."
+                        android:fontFamily="@font/roboto"
+                        android:text="Chọn địa điểm bạn muốn đến"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp" />
@@ -121,8 +121,7 @@
                                 <Spinner
                                     android:id="@+id/citySpinner1"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    />
+                                    android:layout_height="match_parent" />
 
                             </LinearLayout>
 
@@ -147,8 +146,7 @@
                                 <Spinner
                                     android:id="@+id/citySpinner2"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    />
+                                    android:layout_height="match_parent" />
 
                             </LinearLayout>
                         </com.google.android.material.textfield.TextInputLayout>
@@ -175,12 +173,12 @@
                                     android:id="@+id/peopleTextview"
                                     android:layout_width="215dp"
                                     android:layout_height="match_parent"
-                                    android:text="Người lớn"
-                                    android:gravity="fill"
                                     android:layout_marginStart="10dp"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold"
-                                    />
+                                    android:fontFamily="@font/roboto"
+                                    android:gravity="fill"
+                                    android:text="Người lớn"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
 
                                 <ImageButton
                                     android:id="@+id/adultM"
@@ -228,12 +226,12 @@
                                     android:id="@+id/childTextview"
                                     android:layout_width="215dp"
                                     android:layout_height="match_parent"
-                                    android:text="@string/txtTrem"
-                                    android:gravity="fill"
                                     android:layout_marginStart="10dp"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold"
-                                    />
+                                    android:fontFamily="@font/roboto"
+                                    android:gravity="fill"
+                                    android:text="@string/txtTrem"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
 
                                 <ImageButton
                                     android:id="@+id/childM"
@@ -270,17 +268,19 @@
                                     android:layout_width="40dp"
                                     android:layout_height="match_parent"
                                     android:src="@drawable/ic_baseline_calendar_today_24"/>
+
                                 <TextView
                                     android:id="@+id/dateTextview"
                                     android:layout_width="245dp"
                                     android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:fontFamily="@font/roboto"
+                                    android:gravity="fill"
                                     android:hint="Chọn ngày"
                                     android:inputType="date"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
                                     android:textSize="20dp"
-                                    android:layout_marginStart="10dp"
-                                    android:gravity="fill"
                                     tools:ignore="TextViewEdits" />
                                 <ImageButton
                                     android:id="@+id/datePickerActions"

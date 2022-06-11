@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.uit.TripTicketSaler.Interface.ICallBack;
@@ -31,7 +32,6 @@ import java.util.Calendar;
 import java.util.Collections;
 
 public class SearchTicket extends Fragment {
-
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private NavController navController;
 
@@ -131,6 +131,7 @@ public class SearchTicket extends Fragment {
     }
 
     private void LoadCities() {
+
         db.collection("Cities").get()
                 .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
