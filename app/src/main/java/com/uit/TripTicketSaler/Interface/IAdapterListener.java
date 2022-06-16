@@ -1,5 +1,5 @@
 package com.uit.TripTicketSaler.Interface;
 
-public interface ICoachListener {
+public interface IAdapterListener {
     void onClickTicket(int pos);
 }

@@ -1,9 +1,12 @@
-package com.uit.TripTicketSaler;
+package com.uit.TripTicketSaler.AccountManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +14,15 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.uit.TripTicketSaler.MainActivity;
 import com.uit.TripTicketSaler.Model.AppUser;
+import com.uit.TripTicketSaler.R;
 import com.uit.TripTicketSaler.databinding.FragmentSignUpBinding;
 
 public class SignUpFragment extends Fragment {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private FragmentSignUpBinding binding;
+    private NavController navController;
 
     public SignUpFragment() {}
 
@@ -26,12 +32,18 @@ public class SignUpFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentSignUpBinding.inflate(inflater, container, false);
+        NavHostFragment hostFragment = (NavHostFragment) getActivity()
+                .getSupportFragmentManager().findFragmentById(R.id.authNavHost);
+        navController = hostFragment.getNavController();
 
         binding.btnSignUp.setOnClickListener(view -> {
             SignUpAccount();
+        });
+        binding.backPress.setOnClickListener(view -> {
+            navController.navigate(R.id.action_signUpFragment_to_logInFragment);
         });
 
         return binding.getRoot();

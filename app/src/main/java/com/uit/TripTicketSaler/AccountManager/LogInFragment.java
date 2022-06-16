@@ -1,4 +1,4 @@
-package com.uit.TripTicketSaler;
+package com.uit.TripTicketSaler.AccountManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.uit.TripTicketSaler.DetailTrip;
+import com.uit.TripTicketSaler.MainActivity;
 import com.uit.TripTicketSaler.Model.AppUser;
+import com.uit.TripTicketSaler.Model.Coach;
+import com.uit.TripTicketSaler.R;
 import com.uit.TripTicketSaler.databinding.FragmentLogInBinding;
 
 public class LogInFragment extends Fragment {

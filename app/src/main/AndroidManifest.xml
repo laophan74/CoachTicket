@@ -13,11 +13,11 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
 
         </activity>
         <activity
-            android:name=".ClientAuth"
+            android:name=".AccountManager.ClientAuth"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

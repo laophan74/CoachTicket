@@ -4,37 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
     app:startDestination="@id/searchTicket">
-
     <fragment
         android:id="@+id/searchTicket"
         android:name="com.uit.TripTicketSaler.SearchTicket"
         android:label="SearchTicket"
         tools:layout="@layout/fragment_search_ticket">
         <action
-            android:id="@+id/action_searchTicket_to_listCoach"
-            app:destination="@id/listCoach"
-            app:popUpToSaveState="true"/>
+            android:id="@+id/action_searchTicket_to_listTrip"
+            app:destination="@id/listTrip" />
+        <action
+            android:id="@+id/action_searchTicket_to_allTicketFragment"
+            app:destination="@id/allTicketFragment" />
     </fragment>
     <fragment
-        android:id="@+id/listCoach"
-        android:name="com.uit.TripTicketSaler.ListCoach"
-        android:label="ListCoach"
-        tools:layout="@layout/fragment_list_coach">
+        android:id="@+id/listTrip"
+        android:name="com.uit.TripTicketSaler.ListTrip"
+        android:label="ListTrip"
+        tools:layout="@layout/fragment_list_trip">
         <action
-            android:id="@+id/action_listCoach_to_detailTicket"
-            app:destination="@id/detailTicket"
-            app:popUpToSaveState="true"/>
+            android:id="@+id/action_listTrip_to_detailTrip"
+            app:destination="@id/detailTrip" />
         <action
-            android:id="@+id/action_listCoach_to_searchTicket"
+            android:id="@+id/action_listTrip_to_searchTicket"
             app:destination="@id/searchTicket" />
     </fragment>
     <fragment
-        android:id="@+id/detailTicket"
-        android:name="com.uit.TripTicketSaler.DetailTicket"
+        android:id="@+id/detailTrip"
+        android:name="com.uit.TripTicketSaler.DetailTrip"
         android:label="DetailTicket"
-        tools:layout="@layout/fragment_detail_ticket">
+        tools:layout="@layout/fragment_detail_trip">
         <action
-            android:id="@+id/action_detailTicket_to_listCoach"
-            app:destination="@id/listCoach" />
+            android:id="@+id/action_detailTrip_to_listTrip"
+            app:destination="@id/listTrip" />
+        <action
+            android:id="@+id/action_detailTrip_to_serviceFragment"
+            app:destination="@id/serviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serviceFragment"
+        android:name="com.uit.TripTicketSaler.Payment.ServiceFragment"
+        android:label="fragment_service"
+        tools:layout="@layout/fragment_service" >
+        <action
+            android:id="@+id/action_serviceFragment_to_detailTrip"
+            app:destination="@id/detailTrip" />
+        <action
+            android:id="@+id/action_serviceFragment_to_totalCostFragment"
+            app:destination="@id/totalCostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalCostFragment"
+        android:name="com.uit.TripTicketSaler.Payment.TotalCostFragment"
+        android:label="fragment_total_cost"
+        tools:layout="@layout/fragment_total_cost" >
+        <action
+            android:id="@+id/action_totalCostFragment_to_ticketDetailFragment"
+            app:destination="@id/ticketDetailFragment" />
+        <action
+            android:id="@+id/action_totalCostFragment_to_serviceFragment"
+            app:destination="@id/serviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketDetailFragment"
+        android:name="com.uit.TripTicketSaler.Payment.TicketDetailFragment"
+        android:label="fragment_ticket_detail"
+        tools:layout="@layout/fragment_ticket_detail" >
+        <action
+            android:id="@+id/action_ticketDetailFragment_to_searchTicket"
+            app:destination="@id/searchTicket" />
+    </fragment>
+    <fragment
+        android:id="@+id/allTicketFragment"
+        android:name="com.uit.TripTicketSaler.AllTicketFragment"
+        android:label="fragment_all_ticket"
+        tools:layout="@layout/fragment_all_ticket" >
+        <action
+            android:id="@+id/action_allTicketFragment_to_ticketDetailFragment"
+            app:destination="@id/ticketDetailFragment" />
+        <action
+            android:id="@+id/action_allTicketFragment_to_searchTicket"
+            app:destination="@id/searchTicket" />
     </fragment>
 </navigation>
