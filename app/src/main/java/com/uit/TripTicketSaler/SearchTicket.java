@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -16,24 +18,28 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.uit.TripTicketSaler.Interface.ICallBack;
+import com.uit.TripTicketSaler.AccountManager.ClientAuth;
+import com.uit.TripTicketSaler.Interface.ICallBackTrip;
 import com.uit.TripTicketSaler.Model.City;
-import com.uit.TripTicketSaler.Model.Coach;
+import com.uit.TripTicketSaler.Model.Trip;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 
-public class SearchTicket extends Fragment {
-
+public class SearchTicket extends Fragment{
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private NavController navController;
+    public ActionBarDrawerToggle actionBarDrawerToggle;
+    private NavigationView navigationView;
 
     private Spinner citySpn;
     private Spinner citySpn1;
@@ -42,15 +48,15 @@ public class SearchTicket extends Fragment {
     private TextView numChildrenTextview;
     private TextView dateTextview;
     private Button btnSearchC;
+    private ImageView btnUserProfile;
+    private DrawerLayout drawerLayout;
 
     private ArrayList<City> lCity = new ArrayList<>();
     private ArrayList<String> lDist = new ArrayList<>();
 
     public int numPeople = 0;
     public int numChildren = 0;
-    private int y;
-    private int m;
-    private int d;
+    private int y, m, d;
     private City cStart;
     private City cEnd;
 
@@ -78,8 +84,26 @@ public class SearchTicket extends Fragment {
         ImageButton childA = v.findViewById(R.id.childA);
         ImageButton childM = v.findViewById(R.id.childM);
         btnSearchC = v.findViewById(R.id.searchCoach);
+        btnUserProfile = v.findViewById(R.id.btnUserProfile);
+        drawerLayout = v.findViewById(R.id.drawerMain);
+        navigationView = (NavigationView) v.findViewById(R.id.navigation_menu);
 
+        actionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, R.string.nav_open, R.string.nav_close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        btnUserProfile.setOnClickListener(view -> {
+            drawerLayout.openDrawer(navigationView);
+        });
+        //tvUsername.setText(ClientAuth.Client.getUsername());
+        navigationView.setNavigationItemSelectedListener(item -> {
+            if(item.getItemId()==R.id.menuAllTicket) GoToAllTicket();
+            if(item.getItemId()==R.id.menuProfile) {GotoProfile();}
+            return true;
+        });
         LoadCities();
+        numPeopleTextview.setText(String.valueOf(numPeople));
+        numChildrenTextview.setText(String.valueOf(numChildren));
         citySpn.setSelection(0);
         citySpn1.setSelection(1);
 
@@ -180,10 +204,10 @@ public class SearchTicket extends Fragment {
     }
 
     private void SearchCoachClick() {
-        SearchFSData(coachList -> {
+        SearchFSData((tripList) -> {
             Bundle bundle = new Bundle();
             String afterD = "Sau ngày: " + d + "/" + (m + 1) + "/"+ y;
-            bundle.putSerializable("Coaches", coachList);
+            bundle.putSerializable("Trips", tripList);
             bundle.putInt("startInt", cStart.getDistance());
             bundle.putInt("endInt", cEnd.getDistance());
             bundle.putString("startS", cStart.getCname());
@@ -191,25 +215,36 @@ public class SearchTicket extends Fragment {
             bundle.putInt("numCus", numPeople);
             bundle.putInt("numChild", numChildren);
             bundle.putString("afterD" ,afterD);
-            navController.navigate(R.id.action_searchTicket_to_listCoach, bundle);
+            navController.navigate(R.id.action_searchTicket_to_listTrip, bundle);
         });
     }
 
-    private void SearchFSData(ICallBack myCallBack){
-        ArrayList<Coach> lCoach = new ArrayList<>();
+    private void SearchFSData(ICallBackTrip myCallBack){
+        ArrayList<Trip> lTrip = new ArrayList<>();
         Calendar c = Calendar.getInstance();
         c.set(y, m, d, 0, 0);
         Timestamp ts = new Timestamp(c.getTime());
-        db.collection("TravelCars").whereGreaterThan("start", ts)
-            .get().addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot doc : task.getResult()) {
-                            Coach coach =  doc.toObject(Coach.class);
-                            if(coach.getAvailable() > numPeople) lCoach.add(coach);
+        db.collection("Trips")
+                .whereEqualTo("start", cStart.getCname()).whereEqualTo("finish", cEnd.getCname())
+                .get().addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                Trip trip =  doc.toObject(Trip.class);
+                                if(trip.getAvailable() >= numPeople + numChildren &&
+                                    trip.getDeparture_time().compareTo(ts) > 0 ) {
+                                    lTrip.add(trip);
+                                }
+                            }
+                            myCallBack.onCallbackTrip(lTrip);
                         }
-                        myCallBack.onCallback(lCoach);
                     }
-                }
-            );
+                );
+    }
+
+    private void GoToAllTicket(){
+        navController.navigate(R.id.action_searchTicket_to_allTicketFragment);
+    }
+    private void GotoProfile(){
+        navController.navigate(R.id.action_searchTicket_to_userProfileFragment);
     }
 }

@@ -3,6 +3,7 @@ package com.uit.TripTicketSaler.Model;
 public class City implements Comparable<City> {
     private int distance;
     private String cname;
+
     public City(){}
 
     public int getDistance() {

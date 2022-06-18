@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+<<<<<<< HEAD:app/src/main/res/layout/activity_sign_up.xml
     tools:context=".SignUp">
+=======
+    tools:context=".AccountManager.LogInFragment">
+>>>>>>> manh:app/src/main/res/layout/fragment_log_in.xml
 
     <TextView
         android:id="@+id/signin"
@@ -16,13 +20,17 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text="Sign Up"
+        android:text="Sign in"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold" />
 
     <EditText
+<<<<<<< HEAD:app/src/main/res/layout/activity_sign_up.xml
         android:id="@+id/email1"
+=======
+        android:id="@+id/tvEmail"
+>>>>>>> manh:app/src/main/res/layout/fragment_log_in.xml
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
@@ -36,6 +44,7 @@
         android:hint="Email"
         android:padding="20dp"
         android:textColor="@color/white"
+<<<<<<< HEAD:app/src/main/res/layout/activity_sign_up.xml
         android:textColorHint="@color/white" />
 
     <EditText
@@ -43,8 +52,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/email1"
+=======
+        android:textColorHint="@color/white"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEmail"
+>>>>>>> manh:app/src/main/res/layout/fragment_log_in.xml
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="#30ffffff"
@@ -54,6 +73,7 @@
         android:inputType="textPassword"
         android:padding="20dp"
         android:textColor="@color/white"
+<<<<<<< HEAD:app/src/main/res/layout/activity_sign_up.xml
         android:textColorHint="@color/white" />
 
     <EditText
@@ -86,6 +106,73 @@
         android:layout_marginEnd="150dp"
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="NEXT" />
+=======
+        android:textColorHint="@color/white"
+        android:textSize="25sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="LOGIN" />
+
+    <TextView
+        android:id="@+id/tvGoSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Không có tài khoản? Đăng ký ngay!"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/others"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/socialicons"
+        android:layout_centerHorizontal="true"
+        android:text="Đăng nhập bằng"
+        android:textSize="20sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/socialicons"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/google"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/fb"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/twitter"/>
+
+    </LinearLayout>
+>>>>>>> manh:app/src/main/res/layout/fragment_log_in.xml
 
 
 </RelativeLayout>

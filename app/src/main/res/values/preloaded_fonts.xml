@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+<<<<<<< HEAD
         <item>@font/abel</item>
+=======
+        <item>@font/roboto</item>
+>>>>>>> manh
         <item>@font/rubik_medium</item>
     </array>
 </resources>

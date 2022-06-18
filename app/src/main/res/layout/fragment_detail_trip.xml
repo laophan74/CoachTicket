@@ -41,10 +41,6 @@
         android:layout_marginTop="-16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -73,7 +69,7 @@
                         android:textSize="18sp" />
 
                     <LinearLayout
-                        android:id="@+id/linearLayout"
+                        android:id="@+id/layoutInfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textView"
@@ -110,17 +106,36 @@
 
                     </LinearLayout>
 
-
-                    <TextView
-                        android:id="@+id/txtKhoiHanh"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/linearLayout"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="sans-serif"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:textSize="18sp" />
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/layoutInfo"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="sans-serif"
+                            android:text="Nhắn nhủ: "
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/tvDeparture"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="sans-serif"
+                            android:hint="..."
+                            android:maxLength="50"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/Bisque"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
 
 
                     <include
@@ -129,20 +144,33 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
-                        android:layout_marginTop="120dp" />
+                        android:layout_marginTop="105dp" />
 
                 </RelativeLayout>
 
-
-                <com.google.android.material.card.MaterialCardView
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="360dp"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD:app/src/main/res/layout/fragment_detail_ticket.xml
                     android:layout_marginTop="-25dp"
                     android:layout_marginRight="8dp"
                     app:cardCornerRadius="12dp"
                     app:cardUseCompatPadding="true"
                     app:contentPadding="8dp">
+=======
+                    android:layout_marginTop="-36dp"
+                    android:layout_marginRight="8dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="8dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/Bisque">
+>>>>>>> manh:app/src/main/res/layout/fragment_detail_trip.xml
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -159,8 +187,8 @@
                                 android:gravity="center">
 
                                 <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked_img" />
 
@@ -169,6 +197,7 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
                                     android:text="Booked"
+                                    android:textSize="18dp"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
 
@@ -182,8 +211,8 @@
                                 android:gravity="center">
 
                                 <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
@@ -192,6 +221,7 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
                                     android:text="Available"
+                                    android:textSize="18dp"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
@@ -203,8 +233,8 @@
                                 android:gravity="center">
 
                                 <ImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/your_seat_img" />
 
@@ -213,25 +243,34 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
                                     android:text="Your Seat"
+                                    android:textSize="18dp"
                                     android:textAlignment="center"
                                     android:textColor="#b2b2b2" />
                             </LinearLayout>
 
-                    </LinearLayout>
+                        </LinearLayout>
 
-                    <ScrollView
-                        android:id="@+id/groupSeats"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="35dp"
-                        android:orientation="vertical"/>
+                        <ScrollView
+                            android:id="@+id/groupSeats"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dp"
+                            android:orientation="vertical"/>
 
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
+                </ScrollView>
 
-
+                <Button
+                    android:id="@+id/btnGoNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_corner_gradient"
+                    android:layout_gravity="center"
+                    android:text="Chọn dịch vụ"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"/>
             </LinearLayout>
-
-        </ScrollView>
 
     </RelativeLayout>
 

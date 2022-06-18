@@ -11,24 +11,22 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.uit.TripTicketSaler.Adapter.TicketAdapter;
-import com.uit.TripTicketSaler.Interface.ICoachListener;
-import com.uit.TripTicketSaler.Model.Coach;
+import com.uit.TripTicketSaler.Adapter.TripAdapter;
+import com.uit.TripTicketSaler.Interface.IAdapterListener;
+import com.uit.TripTicketSaler.Model.Trip;
 
 import java.util.ArrayList;
-import java.io.Serializable;
 
-public class ListCoach extends Fragment  implements ICoachListener {
+public class ListTrip extends Fragment  implements IAdapterListener {
 
     private RecyclerView rcvCar;
-    private TicketAdapter ticketAdapter;
+    private TripAdapter ticketAdapter;
     private TextView tvStartPoint;
     private TextView tvEndpoint;
     private TextView tvAfterD;
@@ -43,13 +41,14 @@ public class ListCoach extends Fragment  implements ICoachListener {
     private static int end;
     private static int numCus;
     private static int numChild;
-    private static ArrayList<Coach> lCoach = new ArrayList<>();
+    private static ArrayList<Trip> lTrip = new ArrayList<>();
+    private static ArrayList<String> ltripID = new ArrayList<>();
 
-    public ListCoach() {}
+    public ListTrip() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_list_coach, container, false);
+        View v = inflater.inflate(R.layout.fragment_list_trip, container, false);
 
         NavHostFragment hostFragment = (NavHostFragment) getActivity()
                 .getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
@@ -71,17 +70,18 @@ public class ListCoach extends Fragment  implements ICoachListener {
             numCus = getArguments().getInt("numCus");
             numChild = getArguments().getInt("numChild");
             afterD = getArguments().getString("afterD");
-            lCoach = (ArrayList<Coach>) getArguments().getSerializable("Coaches");
+            lTrip = (ArrayList<Trip>) getArguments().getSerializable("Trips");
+            ltripID = getArguments().getStringArrayList("tripIDs");
         }
 
         tvStartPoint.setText(desStart);
         tvEndpoint.setText(desEnd);
         tvAfterD.setText(afterD);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcvCar.setLayoutManager(llm);
         RecyclerView.ItemDecoration decor = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         rcvCar.addItemDecoration(decor);
-        ticketAdapter = new TicketAdapter(lCoach, start, end, numCus, numChild, this);
+        ticketAdapter = new TripAdapter(lTrip, ltripID, start, end, numCus, numChild, this);
         rcvCar.setAdapter(ticketAdapter);
 
         btnBackP.setOnClickListener(view -> {
@@ -108,13 +108,13 @@ public class ListCoach extends Fragment  implements ICoachListener {
     }
 
     private void BackPressClick(){
-        navController.navigate(R.id.action_listCoach_to_searchTicket);
+        navController.navigate(R.id.action_listTrip_to_searchTicket);
     }
 
     @Override
     public void onClickTicket(int pos) {
         Bundle bundle = new Bundle();
-        bundle.putSerializable("coach", lCoach.get(pos));
+        bundle.putString("tripID", lTrip.get(pos).getTripID());
         bundle.putString("pickUp", desStart);
         bundle.putString("dest", desEnd);
         bundle.putInt("start", start);
@@ -122,6 +122,6 @@ public class ListCoach extends Fragment  implements ICoachListener {
         bundle.putInt("adult", numCus);
         bundle.putInt("child", numChild);
 
-        navController.navigate(R.id.action_listCoach_to_detailTicket, bundle);
+        navController.navigate(R.id.action_listTrip_to_detailTrip, bundle);
     }
 }

@@ -12,7 +12,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="16dp"
         app:cardUseCompatPadding="true"
-        app:contentPadding="10dp">
+        app:contentPadding="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,53 +27,32 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/timePickUp"
+                    android:id="@+id/tvTripName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:textColor="#000000"
-                    android:textSize="18dp" />
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvDepartureTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-<<<<<<< HEAD
-                    android:layout_marginBottom="4dp">
-
-                    <TextView
-                        android:layout_width="30dp"
-                        android:layout_height="match_parent"
-                        android:text="Xe: "
-                        android:textColor="#4b4b4b"
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/plate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="@font/calibri"
-                        android:text="38A-3892"
-                        android:textColor="#4b4b4b"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-=======
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/roboto"
                     android:textColor="#4b4b4b"
                     android:textSize="16sp"
                     android:textStyle="bold" />
->>>>>>> manh
 
                 <TextView
-                    android:id="@+id/feature"
+                    android:id="@+id/tvPurchaseDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:textColor="#8a8a8a"
-                    android:textSize="14dp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -85,7 +64,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/totalCost"
+                    android:id="@+id/tvTotalCost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
@@ -96,7 +75,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/duration"
+                    android:id="@+id/tvPlate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -104,19 +83,18 @@
                     android:fontFamily="@font/roboto"
                     android:textAlignment="textEnd"
                     android:textColor="#b3b3b3"
-                    android:textSize="18dp" />
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/availableSeat"
+                    android:id="@+id/tvStatus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="textEnd"
                     android:textColor="#E84118"
+                    android:textStyle="bold"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
 
 </RelativeLayout>
