@@ -1,17 +1,21 @@
 package com.uit.TripTicketSaler.Model;
 
 public class AppUser {
-    private String username = "";
-    private String cmnd = "";
-    private String phoneNum = "";
+    private String username;
+    private String cmnd;
+    private String phoneNum;
+    private String dob;
+    private String address;
 
     public AppUser() {
     }
 
-    public AppUser(String username, String cmnd, String phoneNum) {
+    public void ChangeDataUser(String username, String cmnd, String phoneNum, String dob, String address) {
         this.username = username;
         this.cmnd = cmnd;
         this.phoneNum = phoneNum;
+        this.dob = dob;
+        this.address = address;
     }
 
     public String getUsername() {
@@ -36,5 +40,21 @@ public class AppUser {
 
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

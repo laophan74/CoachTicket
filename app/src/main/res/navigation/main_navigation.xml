@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_searchTicket_to_allTicketFragment"
             app:destination="@id/allTicketFragment" />
+        <action
+            android:id="@+id/action_searchTicket_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/listTrip"
@@ -83,6 +86,15 @@
             app:destination="@id/ticketDetailFragment" />
         <action
             android:id="@+id/action_allTicketFragment_to_searchTicket"
+            app:destination="@id/searchTicket" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.uit.TripTicketSaler.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_searchTicket"
             app:destination="@id/searchTicket" />
     </fragment>
 </navigation>

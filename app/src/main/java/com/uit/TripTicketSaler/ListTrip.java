@@ -77,7 +77,7 @@ public class ListTrip extends Fragment  implements IAdapterListener {
         tvStartPoint.setText(desStart);
         tvEndpoint.setText(desEnd);
         tvAfterD.setText(afterD);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rcvCar.setLayoutManager(llm);
         RecyclerView.ItemDecoration decor = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         rcvCar.addItemDecoration(decor);

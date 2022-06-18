@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/button_corner_red.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/buttonshape.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_arrow_back_white_24dp.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_baseline_info_24.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_baseline_person_outline_24.xml" value="0.22" />
@@ -11,6 +13,7 @@
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_location_on_light_blue_24dp.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_person_outline_white_24dp.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable-v24/ic_swap_horiz_white_24dp.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/background_drawer.xml" value="0.2375" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/button_corner_gradient.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/cash_radio.xml" value="0.1745" />
@@ -19,14 +22,19 @@
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_arrow_left_24.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_arrow_right_24.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_ballot_24.xml" value="0.2385" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_calendar_White.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_child_care_24.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_confirmation_number_24.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_directions_bus_24.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_location_white.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_phone_white.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/my_border.xml" value="0.2375" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/table_border_totalmoney.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/table_drawer_header.xml" value="0.2385" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/drawable/visa_radio.xml" value="0.1745" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/activity_authetication.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/activity_log_in.xml" value="0.23229166666666667" />
@@ -51,6 +59,7 @@
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_sign_up.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_ticket_detail.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_total_cost.xml" value="0.24375" />
+        <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/fragment_user_profile.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/header_drawer.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/item_list_ticket.xml" value="0.23229166666666667" />
         <entry key="..\:/AndroidStudioProjects/CoachTicket/app/src/main/res/layout/item_ticket.xml" value="0.25" />

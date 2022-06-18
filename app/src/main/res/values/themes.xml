@@ -14,6 +14,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="NavigationDrawerStyle">
+        <item name="android:textSize">20sp</item><!-- text size in menu-->
+    </style>
+
     <style name = "SpinnerTheme">
         <item name="android:textColor">@color/purple_200</item>
         <item name="android:fontFamily">@font/rubik_medium</item>

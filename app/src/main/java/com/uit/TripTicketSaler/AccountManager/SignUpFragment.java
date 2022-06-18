@@ -64,7 +64,8 @@ public class SignUpFragment extends Fragment {
             ClientAuth.mAuth.createUserWithEmailAndPassword(_email, _pass)
                     .addOnCompleteListener(getActivity(), task -> {
                         if(task.isSuccessful()){
-                            AppUser newUser = new AppUser(_username, "", "");
+                            AppUser newUser = new AppUser();
+                            newUser.ChangeDataUser(_username, "", "", "", "");
                             ClientAuth.Client = newUser;
                             ClientAuth.mClient = ClientAuth.mAuth.getCurrentUser();
                             db.collection("Users").document(ClientAuth.mClient.getUid()).set(newUser);

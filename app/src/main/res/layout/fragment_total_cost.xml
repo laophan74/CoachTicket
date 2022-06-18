@@ -735,7 +735,7 @@
             android:textStyle="bold"
             android:textAlignment="viewEnd"
             android:textColor="#E50914"
-            android:textSize="25dp"
+            android:textSize="25sp"
             app:layout_constraintEnd_toStartOf="@+id/btnPay"
             app:layout_constraintTop_toBottomOf="@+id/tvTemp" />
 

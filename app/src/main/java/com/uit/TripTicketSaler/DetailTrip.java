@@ -44,7 +44,7 @@ public class DetailTrip extends Fragment {
     private ArrayList<Boolean> seat1 = new ArrayList<>();
     private ArrayList<Boolean> seat2 = new ArrayList<>();
     private ArrayList<String> arrSelected = new ArrayList<>();
-    private int selected = 0;
+    private int numSelected = 0;
     private String dataSeats1 = "/", dataSeats2 = "/";
     int STATUS_AVAILABLE = 1;
     int STATUS_BOOKED = 2;
@@ -135,6 +135,10 @@ public class DetailTrip extends Fragment {
     }
 
     private void PassTicketData(){
+        if(numSelected != totalN){
+            Toast.makeText(getActivity(), "Bạn chưa chọn hết chỗ ngồi", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Bundle bundle = new Bundle();
         bundle.putInt("money", money);
         bundle.putSerializable("trip", trip);
@@ -279,15 +283,15 @@ public class DetailTrip extends Fragment {
         if ((int) view.getTag() == STATUS_AVAILABLE) {
             if (seat1.get(view.getId())) {
                 seat1.set(view.getId(), false);
-                selected--; arrSelected.remove(tv.getText().toString());
+                numSelected--; arrSelected.remove(tv.getText().toString());
                 view.setBackgroundResource(R.drawable.available_img);
             } else {
-                if(selected >=totalN){
+                if(numSelected >=totalN){
                     Toast.makeText(getActivity(), "Bạn đã chọn quá số chỗ!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     seat1.set(view.getId(), true);
-                    selected++; arrSelected.add(tv.getText().toString());
+                    numSelected++; arrSelected.add(tv.getText().toString());
                     view.setBackgroundResource(R.drawable.your_seat_img);
                 }
             }
@@ -301,15 +305,15 @@ public class DetailTrip extends Fragment {
         if ((int) view.getTag() == STATUS_AVAILABLE) {
             if (seat2.get(view.getId())) {
                 seat2.set(view.getId(), false);
-                selected--; arrSelected.remove(tv.getText().toString());
+                numSelected--; arrSelected.remove(tv.getText().toString());
                 view.setBackgroundResource(R.drawable.available_img);
             } else {
-                if(selected >=totalN){
+                if(numSelected >=totalN){
                     Toast.makeText(getActivity(), "Bạn đã chọn quá số chỗ!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     seat2.set(view.getId(), true);
-                    selected++;
+                    numSelected++;
                     arrSelected.add(tv.getText().toString());
                     view.setBackgroundResource(R.drawable.your_seat_img);
                 }

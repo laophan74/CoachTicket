@@ -330,6 +330,7 @@
         app:headerLayout="@layout/header_drawer"
         app:menu="@menu/drawer_menu"
         android:layout_gravity="end"
+        style="@style/NavigationDrawerStyle"
         android:id="@+id/navigation_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

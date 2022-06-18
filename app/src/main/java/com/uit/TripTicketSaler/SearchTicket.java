@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.uit.TripTicketSaler.AccountManager.ClientAuth;
 import com.uit.TripTicketSaler.Interface.ICallBackTrip;
 import com.uit.TripTicketSaler.Model.City;
 import com.uit.TripTicketSaler.Model.Trip;
@@ -85,7 +86,7 @@ public class SearchTicket extends Fragment{
         btnSearchC = v.findViewById(R.id.searchCoach);
         btnUserProfile = v.findViewById(R.id.btnUserProfile);
         drawerLayout = v.findViewById(R.id.drawerMain);
-        navigationView = v.findViewById(R.id.navigation_menu);
+        navigationView = (NavigationView) v.findViewById(R.id.navigation_menu);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -94,9 +95,10 @@ public class SearchTicket extends Fragment{
         btnUserProfile.setOnClickListener(view -> {
             drawerLayout.openDrawer(navigationView);
         });
+        //tvUsername.setText(ClientAuth.Client.getUsername());
         navigationView.setNavigationItemSelectedListener(item -> {
             if(item.getItemId()==R.id.menuAllTicket) GoToAllTicket();
-            else {}
+            if(item.getItemId()==R.id.menuProfile) {GotoProfile();}
             return true;
         });
         LoadCities();
@@ -241,5 +243,8 @@ public class SearchTicket extends Fragment{
 
     private void GoToAllTicket(){
         navController.navigate(R.id.action_searchTicket_to_allTicketFragment);
+    }
+    private void GotoProfile(){
+        navController.navigate(R.id.action_searchTicket_to_userProfileFragment);
     }
 }

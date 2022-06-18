@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.uit.TripTicketSaler.AccountManager.ClientAuth;
 import com.uit.TripTicketSaler.Adapter.TicketAdapter;
@@ -54,7 +55,7 @@ public class AllTicketFragment extends Fragment implements IAdapterListener {
                 .getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
         navController = hostFragment.getNavController();
 
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         binding.rcvTicket.setLayoutManager(llm);
         RecyclerView.ItemDecoration decor = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         binding.rcvTicket.addItemDecoration(decor);
@@ -76,9 +77,9 @@ public class AllTicketFragment extends Fragment implements IAdapterListener {
     }
 
     private void GetAllTicket(ICallBackTicket callBackTicket){
-
+        lTicket.clear();
         db.collection("Tickets").whereEqualTo("userID", ClientAuth.mClient.getUid())
-                .get().addOnCompleteListener(task -> {
+                .orderBy("purchaseDate", Query.Direction.DESCENDING).get().addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
                         for(QueryDocumentSnapshot item : task.getResult()){
                             Ticket ticket = item.toObject(Ticket.class);

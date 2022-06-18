@@ -1,5 +1,6 @@
 package com.uit.TripTicketSaler.Payment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.uit.TripTicketSaler.AccountManager.ClientAuth;
 import com.uit.TripTicketSaler.DetailTrip;
+import com.uit.TripTicketSaler.Model.Coupon;
 import com.uit.TripTicketSaler.Model.Ticket;
 import com.uit.TripTicketSaler.Model.Trip;
 import com.uit.TripTicketSaler.R;
@@ -32,7 +34,7 @@ public class TotalCostFragment extends Fragment {
     private FragmentTotalCostBinding binding;
     private NavController navController;
 
-    private int travelCost = 0, suitCost = 0, mealCost = 0, insCost = 0, totalCost=0;
+    private int travelCost = 0, suitCost = 0, mealCost = 0, insCost = 0, totalCost=0, finalCost = 0;
     private HashMap<String, Boolean> service = new HashMap<>();
     private String pMethod;
 
@@ -43,6 +45,7 @@ public class TotalCostFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,16 +62,15 @@ public class TotalCostFragment extends Fragment {
         if(checkService[2]) mealCost += 60;
         if(checkService[3]) insCost += 50;
         totalCost += travelCost * 110 / 100 + suitCost + mealCost + insCost;
+        finalCost += totalCost;
 
         service.put("suitcase", checkService[0]);
         service.put("breakfast", checkService[1]);
         service.put("meal", checkService[2]);
         service.put("insurance", checkService[3]);
 
-
-
-        binding.tvAll.setText(Integer.toString(totalCost));
-        binding.tvRedAll.setText(Integer.toString(totalCost));
+        binding.tvAll.setText(Integer.toString(finalCost));
+        binding.tvRedAll.setText(Integer.toString(finalCost));
         binding.tvTicketPrice.setText(Integer.toString(travelCost));
         binding.tvInsurance.setText(Integer.toString(insCost));
         binding.tvMeal.setText(Integer.toString(mealCost));
@@ -77,6 +79,10 @@ public class TotalCostFragment extends Fragment {
         binding.totalTicketPrice.setText(Integer.toString(travelCost * 110 / 100));
         binding.tvServiceFee.setText(Integer.toString(suitCost + mealCost + insCost));
 
+        binding.btnInputCode.setOnClickListener(view -> {
+            InputVoucher(binding.editCode.getText().toString());
+        });
+
         binding.btnPay.setOnClickListener(view -> {
             MakePurchase();
         });
@@ -84,6 +90,30 @@ public class TotalCostFragment extends Fragment {
 
         });
         return binding.getRoot();
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void InputVoucher(String coupon){
+        db.collection("Vouchers").document(coupon)
+                .get().addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        Coupon vc = task.getResult().toObject(Coupon.class);
+                        if(vc==null) {
+                            Toast.makeText(getActivity(), "Coupon không tồn tại", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        if(!vc.isStatus()) {
+                            Toast.makeText(getActivity(), "Coupon không khả dụng", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        finalCost = totalCost * (100 - vc.getOff()) / 100;
+                        binding.tvAll.setText(Integer.toString(finalCost));
+                        binding.tvRedAll.setText(Integer.toString(finalCost));
+                        String giam = (totalCost * vc.getOff() / 100) + " (-" + vc.getOff() + "%)";
+                        binding.tvCoupon.setText(giam);
+                        Toast.makeText(getActivity(), "Quý khách đã được giảm giá", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void MakePurchase(){
@@ -104,7 +134,7 @@ public class TotalCostFragment extends Fragment {
                 DetailTrip.tripID,
                 ClientAuth.mClient.getUid(),
                 getArguments().getString("detail"),
-                totalCost,
+                finalCost,
                 getArguments().getStringArrayList("seatNumber"),
                 service,
                 getArguments().getInt("numAdult"),
